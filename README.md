@@ -1,14 +1,24 @@
 # Personal Website
 
-A small, responsive personal site built with plain HTML, CSS, and JavaScript. There is no build step or package manager to install.
+A plain HTML starter for a personal website. It has no build step or dependencies.
 
-## Files
+## Preview locally
 
-- `index.html` — page content and metadata
-- `styles.css` — layout, colors, and responsive styles
-- `script.js` — small browser-side enhancements
-- `favicon.svg` — site icon
-- `.github/workflows/pages.yml` — publishes the site to GitHub Pages on pushes to `main`
+From this folder, run:
+
+```sh
+python3 -m http.server 8000
+```
+
+Then open <http://localhost:8000> in a browser.
+
+## Publish with GitHub Pages
+
+The workflow in `.github/workflows/pages.yml` publishes the site to GitHub Pages on pushes to `main`. The repository is configured to use GitHub Actions as its Pages source.
+
+## Make it yours
+
+Replace the Lorem Ipsum text and project names in `index.html`. Add a stylesheet or JavaScript file when you're ready.
 
 ## Preview locally
 
