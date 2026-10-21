@@ -1,49 +1,136 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipiscing elit.">
-    <title>Carter Falkenberg</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Lorem ipsum — a small personal index." />
+    <title>Source / Carter Falkenberg</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <a class="skip" href="#content">Skip to content</a>
     <header>
-      <h1>Carter Falkenberg</h1>
-      <nav aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a class="identity" href="#">cf<span>/</span>index</a
+      ><span class="location">a personal directory</span>
     </header>
-
-    <main>
-      <section id="about">
-        <h2>About</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <article>
-          <h3>Project One</h3>
+    <div class="layout">
+      <aside>
+        <div class="avatar" aria-hidden="true">[ cf ]</div>
+        <p class="person">Carter<br />Falkenberg</p>
+        <p class="muted">Lorem ipsum dolor sit amet.</p>
+        <nav aria-label="Sections">
+          <a href="#about">01 About</a><a href="#work">02 Projects</a
+          ><a href="#notes">03 Notes</a><a href="#contact">04 Contact</a>
+        </nav>
+        <p class="tiny">HTML, nothing more.<br />Always a work in progress.</p>
+      </aside>
+      <main id="content">
+        <section class="intro" id="about">
+          <p class="path">~/about.txt</p>
+          <h1>
+            Lorem ipsum<br />dolor sit amet<span
+              class="cursor"
+              aria-hidden="true"
+              >_</span
+            >
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam.
+          </p>
+          <p class="muted">
+            Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+            ipsum. Praesent mauris.
+          </p>
+          <div class="status">
+            <span aria-hidden="true">●</span> Lorem ipsum, in progress.
+          </div>
+        </section>
+        <section id="work">
+          <div class="section-title">
+            <h2>Selected projects</h2>
+            <span>3 items</span>
+          </div>
+          <details>
+            <summary>
+              <span><span class="num">01</span> Lorem ipsum</span
+              ><span class="tag">web</span>
+            </summary>
+            <div class="detail">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                cursus ante dapibus diam. Nulla quis sem at nibh elementum
+                imperdiet.
+              </p>
+              <code>lorem ipsum / 2026</code>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="num">02</span> Dolor sit amet</span
+              ><span class="tag">tool</span>
+            </summary>
+            <div class="detail">
+              <p>
+                Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue
+                semper porta. Mauris massa.
+              </p>
+              <code>dolor sit amet / 2026</code>
+            </div>
+          </details>
+          <details>
+            <summary>
+              <span><span class="num">03</span> Consectetur</span
+              ><span class="tag">experiment</span>
+            </summary>
+            <div class="detail">
+              <p>
+                Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu
+                ad litora torquent per conubia nostra.
+              </p>
+              <code>consectetur / 2025</code>
+            </div>
+          </details>
+          <p class="hint">↳ Select a project to read a little more.</p>
+        </section>
+        <section id="notes">
+          <div class="section-title">
+            <h2>Notes &amp; fragments</h2>
+            <span>2026</span>
+          </div>
+          <details id="note-one" class="note-detail">
+            <summary>
+              <time datetime="2026-10-01">10.01</time
+              ><span>Lorem ipsum dolor sit amet</span>
+            </summary>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.
+              Maecenas mattis.
+            </p>
+          </details>
+          <details id="note-two" class="note-detail">
+            <summary>
+              <time datetime="2026-09-16">09.16</time
+              ><span>Consectetur adipiscing elit</span>
+            </summary>
+            <p>
+              Sed convallis tristique sem. Proin ut ligula vel nunc egestas
+              porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus
+              non, massa.
+            </p>
+          </details>
+        </section>
+        <section id="contact">
+          <p class="path">~/contact.txt</p>
+          <h2>Elsewhere</h2>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </article>
-        <article>
-          <h3>Project Two</h3>
-          <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
-        </article>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis.</p>
-        <p><a href="https://github.com/CarterKFalkenberg">GitHub</a></p>
-      </section>
-    </main>
-
-    <footer>
-      <p>© 2026 Carter Falkenberg</p>
-    </footer>
+          <a href="https://github.com/CarterKFalkenberg">GitHub ↗</a>
+        </section>
+        <footer>
+          <span>© Carter Falkenberg</span><a href="#">back to top ↑</a>
+        </footer>
+      </main>
+    </div>
   </body>
 </html>
