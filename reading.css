@@ -7,16 +7,16 @@
 }
 
 .reading-heading {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: .3rem 1rem;
   margin-bottom: 0;
 }
 
-.reading-heading h2 { margin: 0; }
-.reading-heading .sample-note { margin: 0; }
+.reading-heading h2 {
+  margin: 0;
+  color: var(--reading-muted);
+  font: 500 .7rem/1.4 "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
 .sample-note, .finder-footnote, .shelf-count, .shelf-filters,
 .book-byline, .book-status, .book-rating, .note-label, .shelf-colophon, .shelf-link {
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -28,7 +28,7 @@
   grid-template-columns: 1.08fr 1fr;
   gap: 1.5rem;
   padding: 0 0 2rem;
-  margin: 1.1rem 0 2rem;
+  margin: .65rem 0 2rem;
   border-bottom: 1px solid var(--rule);
 }
 .book-questions { display: flex; flex-direction: column; align-items: flex-start; }
@@ -138,8 +138,10 @@
 .shelf-link { color: var(--reading-accent); font-size: .75rem; text-decoration: none; }
 .shelf-link:hover { color: #d5e8d2; text-decoration: underline; }
 .shelf-link span { margin-left: .2rem; }
-.shelf-heading { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: .75rem; }
+.shelf-heading { display: flex; flex-wrap: wrap; gap: .3rem 1rem; justify-content: space-between; align-items: baseline; margin-bottom: .75rem; }
 .shelf-heading h3 { font-size: 1.3rem; margin: 0; }
+.shelf-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; }
+.shelf-meta .sample-note { margin: 0; }
 .shelf-count { font-size: .7rem; color: var(--reading-muted); }
 .shelf-filters { display: flex; gap: 1.4rem; margin-bottom: .5rem; }
 .shelf-filters button {

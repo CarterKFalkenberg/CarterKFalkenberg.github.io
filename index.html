@@ -7,7 +7,7 @@
     <title>Carter Falkenberg</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="reading.css?v=2" />
+    <link rel="stylesheet" href="reading.css?v=3" />
     <script src="reading.js" defer></script>
     <noscript><style>.book-finder, .shelf-filters { display: none; }</style></noscript>
   </head>
@@ -57,7 +57,6 @@
       <section id="reading" aria-labelledby="reading-title">
         <div class="reading-heading">
           <h2 id="reading-title">reading</h2>
-          <p class="sample-note">Sample books for now.</p>
         </div>
 
         <div class="book-finder" aria-labelledby="finder-title">
@@ -103,7 +102,10 @@
 
         <div class="shelf-heading">
           <h3 id="shelf-title">on my shelf</h3>
-          <span class="shelf-count" id="shelf-count" aria-live="polite">7 books</span>
+          <div class="shelf-meta">
+            <span class="shelf-count" id="shelf-count" aria-live="polite">7 books</span>
+            <p class="sample-note">Sample books for now.</p>
+          </div>
         </div>
         <div class="shelf-filters" role="group" aria-label="Filter the bookshelf">
           <button type="button" data-filter="all" class="is-selected" aria-pressed="true">All books <span>7</span></button>
