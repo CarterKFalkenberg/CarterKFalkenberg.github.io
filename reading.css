@@ -27,9 +27,8 @@
   display: grid;
   grid-template-columns: 1.08fr 1fr;
   gap: 1.5rem;
-  padding: 1.9rem 0 2rem;
-  margin: 1.5rem 0 2rem;
-  border-top: 1px solid var(--rule);
+  padding: 0 0 2rem;
+  margin: 1.1rem 0 2rem;
   border-bottom: 1px solid var(--rule);
 }
 .book-questions { display: flex; flex-direction: column; align-items: flex-start; }
@@ -184,7 +183,7 @@
 #reading button:focus-visible, .shelf-book summary:focus-visible { outline: 2px solid var(--reading-accent); outline-offset: 4px; border-radius: 2px; }
 
 @media (max-width: 560px) {
-  .book-finder { gap: 1.1rem; grid-template-columns: 1fr; padding-top: 1.4rem; }
+  .book-finder { gap: 1.1rem; grid-template-columns: 1fr; }
   .book-questions h3 { margin-bottom: .6rem; }
   .book-choice { font-size: 1rem; }
   .book-choice::after { right: auto; width: 15rem; max-width: calc(100% - 2.55rem); }
