@@ -7,6 +7,9 @@
     <title>Carter Falkenberg</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="reading.css" />
+    <script src="reading.js" defer></script>
+    <noscript><style>.book-finder, .shelf-filters { display: none; }</style></noscript>
   </head>
   <body id="top">
     <a class="skip-link" href="#content">Skip to content</a>
@@ -17,6 +20,7 @@
         <ul>
           <li><a href="#about">about</a></li>
           <li><a href="#projects">projects</a></li>
+          <li><a href="#reading">reading</a></li>
           <li><a href="#contact">contact</a></li>
         </ul>
       </nav>
@@ -48,6 +52,126 @@
             </p>
           </li>
         </ul>
+      </section>
+
+      <section id="reading" aria-labelledby="reading-title">
+        <div class="reading-heading">
+          <h2 id="reading-title">a life in the margins</h2>
+          <span class="reading-eyebrow">books &amp; reading</span>
+        </div>
+        <p class="reading-intro">Some books stay with you long after the last page. These are the ones I’d pull off the shelf for you.</p>
+        <p class="sample-note">A sample shelf for now. Real reads coming soon.</p>
+
+        <div class="book-finder" aria-labelledby="finder-title">
+          <div class="book-questions">
+            <h3 id="finder-title">The book<span aria-hidden="true">…</span></h3>
+            <div class="book-choices" role="group" aria-label="Find a book by what it means to me">
+              <span class="bookworm" aria-hidden="true">
+                <svg viewBox="0 0 44 40" fill="none">
+                  <path class="worm-body" d="M6 29c-5-7 2-13 7-8s6 10 11 5c4-4 0-8 1-14" stroke="#a6c6a5" stroke-width="8" stroke-linecap="round" />
+                  <path d="M26 8l-2-4m6 4 2-4" stroke="#a6c6a5" stroke-width="1.8" stroke-linecap="round" />
+                  <ellipse cx="28" cy="13" rx="9" ry="8.5" fill="#bad5b6" />
+                  <path d="M23 12h14m-6 0h-3" stroke="#304037" stroke-width="1.1" />
+                  <circle cx="25" cy="12.5" r="3.1" fill="#bad5b6" stroke="#304037" stroke-width="1.2" />
+                  <circle cx="33" cy="12.5" r="3.1" fill="#bad5b6" stroke="#304037" stroke-width="1.2" />
+                  <circle cx="25.7" cy="12.5" r=".9" fill="#26372c" /><circle cx="33.7" cy="12.5" r=".9" fill="#26372c" />
+                  <path d="M28 17q2 2 4-.5" stroke="#304037" stroke-width="1.2" stroke-linecap="round" />
+                </svg>
+              </span>
+              <button type="button" class="book-choice is-selected" data-pick="lumen" aria-pressed="true">that is my favorite read.</button>
+              <button type="button" class="book-choice" data-pick="orbis" aria-pressed="false">that opened my eyes.</button>
+              <button type="button" class="book-choice" data-pick="ars" aria-pressed="false">that reflects my philosophy.</button>
+              <button type="button" class="book-choice" data-pick="noctis" aria-pressed="false">that is my favorite fiction.</button>
+              <button type="button" class="book-choice" data-pick="tempus" aria-pressed="false">I couldn’t put down.</button>
+            </div>
+            <span class="finder-footnote">a little reading between the lines</span>
+          </div>
+
+          <div class="book-answer" id="book-answer">
+            <div class="featured-cover cover-lumen" aria-hidden="true">
+              <span class="cover-edition">THE MARGIN EDITIONS</span>
+              <span class="cover-title">Lumen<br />et Umbra</span>
+              <span class="cover-art"></span>
+              <span class="cover-author">ELIAS VALE</span>
+            </div>
+            <div class="featured-caption" aria-live="polite" aria-atomic="true">
+              <h4 id="featured-title">Lumen et Umbra</h4>
+              <p id="featured-author">Elias Vale</p>
+              <p class="featured-note" id="featured-note">A quiet reminder to pay attention. The kind of book that feels a little different every time you return to it.</p>
+              <a class="shelf-link" id="shelf-link" href="#book-lumen">Find it on the shelf <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="shelf-heading">
+          <h3 id="shelf-title">on my shelf</h3>
+          <span class="shelf-count" id="shelf-count" aria-live="polite">7 books</span>
+        </div>
+        <div class="shelf-filters" role="group" aria-label="Filter the bookshelf">
+          <button type="button" data-filter="all" class="is-selected" aria-pressed="true">All books <span>7</span></button>
+          <button type="button" data-filter="reading" aria-pressed="false">Reading <span>2</span></button>
+          <button type="button" data-filter="finished" aria-pressed="false">Finished <span>5</span></button>
+        </div>
+        <div class="bookshelf" aria-labelledby="shelf-title">
+          <details class="shelf-book" id="book-terra" data-status="reading">
+            <summary>
+              <span class="mini-cover cover-terra" aria-hidden="true">T</span>
+              <span class="book-meta"><span class="book-title">Terra Incognita</span><span class="book-byline">Nora Ellis <span>·</span> Essays</span></span>
+              <span class="book-status"><span class="reading-dot"></span>Reading</span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Currently in the margins</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A collection of small observations about unfamiliar places and the things we bring with us.</p></div>
+          </details>
+          <details class="shelf-book" id="book-mare" data-status="reading">
+            <summary>
+              <span class="mini-cover cover-mare" aria-hidden="true">M</span>
+              <span class="book-meta"><span class="book-title">Mare Tranquillitatis</span><span class="book-byline">Julian Moss <span>·</span> Fiction</span></span>
+              <span class="book-status"><span class="reading-dot"></span>Reading</span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Currently in the margins</span><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A slow, atmospheric story of a seaside town and a letter that arrives twenty years too late.</p></div>
+          </details>
+          <details class="shelf-book" id="book-lumen" data-status="finished">
+            <summary>
+              <span class="mini-cover cover-lumen" aria-hidden="true">L</span>
+              <span class="book-meta"><span class="book-title">Lumen et Umbra</span><span class="book-byline">Elias Vale <span>·</span> Essays</span></span>
+              <span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Finished · A favorite</span><p>A quiet reminder to pay attention. The kind of book that feels a little different every time you return to it. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+          </details>
+          <details class="shelf-book" id="book-orbis" data-status="finished">
+            <summary>
+              <span class="mini-cover cover-orbis" aria-hidden="true">O</span>
+              <span class="book-meta"><span class="book-title">Orbis Alius</span><span class="book-byline">Ada Laurent <span>·</span> Nonfiction</span></span>
+              <span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Finished · A new perspective</span><p>A window into a world I’d walked past without noticing. It left me with better questions than the ones I started with. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+          </details>
+          <details class="shelf-book" id="book-ars" data-status="finished">
+            <summary>
+              <span class="mini-cover cover-ars" aria-hidden="true">A</span>
+              <span class="book-meta"><span class="book-title">Ars Vivendi</span><span class="book-byline">Lucia Venn <span>·</span> Philosophy</span></span>
+              <span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Finished · A way of seeing</span><p>On living deliberately, staying curious, and finding enough in the everyday. Plenty of underlines in this one. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+          </details>
+          <details class="shelf-book" id="book-noctis" data-status="finished">
+            <summary>
+              <span class="mini-cover cover-noctis" aria-hidden="true">N</span>
+              <span class="book-meta"><span class="book-title">Noctis Silvarum</span><span class="book-byline">Theo Arden <span>·</span> Fiction</span></span>
+              <span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Finished · Favorite fiction</span><p>A strange little world, beautifully built. I finished the story and immediately missed being inside it. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+          </details>
+          <details class="shelf-book" id="book-tempus" data-status="finished">
+            <summary>
+              <span class="mini-cover cover-tempus" aria-hidden="true">T</span>
+              <span class="book-meta"><span class="book-title">Tempus Fugit</span><span class="book-byline">Milo West <span>·</span> Mystery</span></span>
+              <span class="book-rating" aria-label="Rated 4 out of 5"><span aria-hidden="true">★</span> 4<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
+            </summary>
+            <div class="book-note"><span class="note-label">Finished · Just one more chapter</span><p>The “one more chapter” book that turned into a very late night. Every answer opens another door. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+          </details>
+        </div>
+        <p class="shelf-colophon">An unfinished shelf, by design. <span>Click a title for a note.</span></p>
+        <noscript><p class="sample-note">The shelf and notes work without JavaScript. Enable it to explore the book picker and filters.</p></noscript>
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
