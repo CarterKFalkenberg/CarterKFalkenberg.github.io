@@ -12,21 +12,15 @@
   align-items: baseline;
   justify-content: space-between;
   gap: .3rem 1rem;
-  margin-bottom: .9rem;
+  margin-bottom: 0;
 }
 
 .reading-heading h2 { margin: 0; }
-.reading-eyebrow, .sample-note, .finder-footnote, .shelf-count, .shelf-filters,
+.reading-heading .sample-note { margin: 0; }
+.sample-note, .finder-footnote, .shelf-count, .shelf-filters,
 .book-byline, .book-status, .book-rating, .note-label, .shelf-colophon, .shelf-link {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
-.reading-eyebrow {
-  font-size: .68rem;
-  color: var(--reading-muted);
-  letter-spacing: .14em;
-  text-transform: uppercase;
-}
-.reading-intro { max-width: 49ch; margin-bottom: .6rem; }
 .sample-note { color: var(--reading-muted); font-size: .78rem; }
 
 .book-finder {
@@ -190,8 +184,6 @@
 #reading button:focus-visible, .shelf-book summary:focus-visible { outline: 2px solid var(--reading-accent); outline-offset: 4px; border-radius: 2px; }
 
 @media (max-width: 560px) {
-  .reading-heading { display: block; }
-  .reading-eyebrow { display: block; margin-top: .5rem; }
   .book-finder { gap: 1.1rem; grid-template-columns: 1fr; padding-top: 1.4rem; }
   .book-questions h3 { margin-bottom: .6rem; }
   .book-choice { font-size: 1rem; }
