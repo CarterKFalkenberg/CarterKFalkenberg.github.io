@@ -12,10 +12,6 @@
 
 .reading-heading h2 {
   margin: 0;
-  color: var(--reading-muted);
-  font: 500 .7rem/1.4 "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: .15em;
-  text-transform: uppercase;
 }
 .sample-note, .finder-footnote, .shelf-count, .shelf-filters,
 .book-byline, .book-status, .book-rating, .note-label, .shelf-colophon, .shelf-link {
@@ -140,7 +136,7 @@
 .shelf-link:hover { color: #d5e8d2; text-decoration: underline; }
 .shelf-link span { margin-left: .2rem; }
 .shelf-heading { display: flex; flex-wrap: wrap; gap: .3rem 1rem; justify-content: space-between; align-items: baseline; margin-bottom: .75rem; }
-.shelf-heading h3 { font-size: 1.3rem; margin: 0; }
+.shelf-heading h3 { margin: 0; }
 .shelf-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; }
 .shelf-meta .sample-note { margin: 0; }
 .shelf-count { font-size: .7rem; color: var(--reading-muted); }
