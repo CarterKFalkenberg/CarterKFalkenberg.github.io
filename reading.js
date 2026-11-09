@@ -13,6 +13,8 @@
 
   const choices = [...section.querySelectorAll('.book-choice')];
   const worm = section.querySelector('.bookworm');
+  const wormSvg = worm.querySelector('svg');
+  const pupils = worm.querySelector('.worm-pupils');
   const answer = section.querySelector('.book-answer');
   const cover = section.querySelector('.featured-cover');
   const filters = [...section.querySelectorAll('[data-filter]')];
@@ -22,9 +24,43 @@
   let currentAnimation;
   let coverAnimation;
   let wormTimer;
+  let gazeFrame = 0;
+  let pointerPosition = null;
+
+  function updateGaze() {
+    gazeFrame = 0;
+    if (!pointerPosition || reducedMotion.matches) return;
+    // Work in SVG coordinates so the gaze stays accurate during a hop or zoom.
+    const matrix = wormSvg.getScreenCTM();
+    if (!matrix) return;
+    const point = wormSvg.createSVGPoint();
+    point.x = pointerPosition.x;
+    point.y = pointerPosition.y;
+    const local = point.matrixTransform(matrix.inverse());
+    const dx = local.x - 29;
+    const dy = local.y - 12.5;
+    // Keep both pupils comfortably inside their glasses, even at the page edges.
+    const scale = 1.4 / Math.max(35, Math.hypot(dx, dy));
+    pupils.style.transform = `translate(${dx * scale}px, ${dy * scale}px)`;
+    if (worm.classList.contains('is-travelling')) queueGaze();
+  }
+
+  function queueGaze() {
+    if (pointerPosition && !reducedMotion.matches && !gazeFrame) {
+      gazeFrame = requestAnimationFrame(updateGaze);
+    }
+  }
+
+  function resetGaze() {
+    pointerPosition = null;
+    cancelAnimationFrame(gazeFrame);
+    gazeFrame = 0;
+    pupils.style.transform = 'translate(0px, 0px)';
+  }
 
   function positionWorm() {
     worm.style.transform = `translateY(${selected.offsetTop + (selected.offsetHeight - worm.offsetHeight) / 2}px)`;
+    queueGaze();
   }
 
   function pickBook(button) {
@@ -41,6 +77,7 @@
     // Restart the small wiggle even when a visitor changes their mind mid-hop.
     void worm.offsetWidth;
     worm.classList.add('is-travelling');
+    queueGaze();
     wormTimer = setTimeout(() => worm.classList.remove('is-travelling'), 580);
 
     const book = books[button.dataset.pick];
@@ -107,6 +144,15 @@
     }
   }
   window.addEventListener('hashchange', revealHash);
+  window.addEventListener('pointermove', event => {
+    if (event.pointerType === 'touch' || reducedMotion.matches) return;
+    pointerPosition = { x: event.clientX, y: event.clientY };
+    queueGaze();
+  }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', resetGaze);
+  window.addEventListener('blur', resetGaze);
+  window.addEventListener('scroll', queueGaze, { passive: true });
+  reducedMotion.addEventListener('change', resetGaze);
   window.addEventListener('resize', positionWorm);
   document.fonts?.ready.then(positionWorm);
   positionWorm();

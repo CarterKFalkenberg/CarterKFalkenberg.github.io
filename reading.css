@@ -74,6 +74,7 @@
   transition: transform 560ms cubic-bezier(.22, 1, .36, 1);
 }
 .bookworm svg { width: 100%; height: 100%; overflow: visible; }
+.worm-pupils { transition: transform 120ms ease-out; }
 .bookworm.is-travelling svg { animation: worm-wiggle 560ms ease-in-out; }
 @keyframes worm-wiggle {
   0%, 100% { transform: rotate(0); }
