@@ -2,7 +2,7 @@
 
 A small personal site built with plain HTML, CSS, and JavaScript. It has no build step or dependencies.
 
-The design takes its cue from [Sean Goedecke's website](https://www.seangoedecke.com/): a narrow text column, charcoal background, serif body text, a bold name heading, and pale blue links. This homepage includes an introduction, selected projects, an interactive reading shelf, and a GitHub link. Descriptive copy, project titles, and books remain placeholders.
+The design takes its cue from [Sean Goedecke's website](https://www.seangoedecke.com/): a narrow text column, charcoal background, serif body text, a bold name heading, and pale blue links. This homepage includes an introduction, selected projects, writing, an interactive reading shelf, and a GitHub link. Descriptive copy, project titles, writing, and books remain placeholders.
 
 ## Preview locally
 
@@ -27,3 +27,7 @@ Replace the Lorem Ipsum text and project names in `index.html`. Adjust the basic
 The reading section uses `reading.css` and `reading.js`, keeping the original site's dark, text-first layout. It includes seven clearly marked sample books, reading/finished filters, ratings, and expandable notes. The sentence picker animates a little bookworm to the selected recommendation and links directly to its shelf note. Keyboard controls and reduced-motion preferences are supported; the catalog and notes also work without JavaScript.
 
 Replace the sample shelf entries in `index.html` and the five recommendation records at the top of `reading.js` with real books. Keep each recommendation key matched to its shelf entry's `book-` ID and cover class. Filter counts are calculated from shelf entries when JavaScript is available.
+
+## Writing section
+
+The writing section has three sample pieces in `index.html`, each with a title, short description, essay/note label, and expandable body. Replace the placeholder text with your own writing. It uses native HTML disclosure controls, so reading and keyboard navigation work without JavaScript. Its layout is in `styles.css`, and its heading shares the site's section label style.
