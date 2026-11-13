@@ -27,7 +27,7 @@ def build():
             raise ValueError(f"Missing cover for {book['id']}")
         if 'rating' in book and not 0 <= book['rating'] <= 5:
             raise ValueError(f"Rating outside 0–5 for {book['id']}")
-    years = sorted({book['year'] for book in books if book['status'] == 'finished'})
+    years = sorted({book['year'] for book in books if book['status'] == 'finished'}, reverse=True)
     rows = [START, '''        <div class="reading-heading">
           <h2 id="reading-title" class="section-label">reading</h2>
           <span class="shelf-count" id="shelf-count" aria-live="polite">%s books</span>
@@ -35,9 +35,9 @@ def build():
         <div class="shelf-filters" role="group" aria-label="Reading status">''' % len(books)]
     for status, label in [('reading', 'Reading'), ('finished', 'Finished')]:
         count = sum(book['status'] == status for book in books)
-        selected = status == 'reading'
+        selected = status == 'finished'
         rows.append(f'          <button type="button" data-filter="{status}"' + (' class="is-selected"' if selected else '') + f' aria-pressed="{str(selected).lower()}" aria-controls="bookshelf">{label} <span>{count}</span></button>')
-    rows.extend(['        </div>', '        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year" hidden>'])
+    rows.extend(['        </div>', '        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year">'])
     for year in years:
         selected = year == max(years)
         count = sum(book.get('year') == year for book in books)

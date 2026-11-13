@@ -7,8 +7,8 @@
     <title>Carter Falkenberg</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css?v=3" />
-    <link rel="stylesheet" href="reading.css?v=8" />
-    <script src="reading.js?v=5" defer></script>
+    <link rel="stylesheet" href="reading.css?v=9" />
+    <script src="reading.js?v=6" defer></script>
     <noscript><style>.shelf-filters, .year-filters { display: none; }</style></noscript>
   </head>
   <body id="top">
@@ -112,15 +112,15 @@
           <span class="shelf-count" id="shelf-count" aria-live="polite">40 books</span>
         </div>
         <div class="shelf-filters" role="group" aria-label="Reading status">
-          <button type="button" data-filter="reading" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Reading <span>5</span></button>
-          <button type="button" data-filter="finished" aria-pressed="false" aria-controls="bookshelf">Finished <span>35</span></button>
+          <button type="button" data-filter="reading" aria-pressed="false" aria-controls="bookshelf">Reading <span>5</span></button>
+          <button type="button" data-filter="finished" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Finished <span>35</span></button>
         </div>
-        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year" hidden>
-          <button type="button" class="year-filter" data-year="2025" aria-pressed="false" aria-controls="bookshelf" aria-label="Books finished in 2025">
-            <span class="year-number">2025</span><span class="year-count">19 books</span>
-          </button>
+        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year">
           <button type="button" class="year-filter is-selected" data-year="2026" aria-pressed="true" aria-controls="bookshelf" aria-label="Books finished in 2026">
             <span class="year-number">2026</span><span class="year-count">16 books</span>
+          </button>
+          <button type="button" class="year-filter" data-year="2025" aria-pressed="false" aria-controls="bookshelf" aria-label="Books finished in 2025">
+            <span class="year-number">2025</span><span class="year-count">19 books</span>
           </button>
         </div>
         <div class="bookshelf" id="bookshelf" aria-labelledby="reading-title">

@@ -13,7 +13,7 @@
   const reader = section.querySelector('#book-reader');
   const closeButton = reader.querySelector('.reader-close');
   let openedFrom = null;
-  let status = 'reading';
+  let status = statusButtons.find(button => button.getAttribute('aria-pressed') === 'true').dataset.filter;
   let year = yearButtons.find(button => button.getAttribute('aria-pressed') === 'true').dataset.year;
 
   function bookCount(total) {

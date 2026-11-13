@@ -18,13 +18,13 @@
 .shelf-filters button.is-selected::after { transform: scaleX(1); }
 .shelf-filters button:hover { color: #eeeade; }
 
-.year-filters { display: flex; flex-wrap: wrap; gap: .85rem; margin: 1.15rem 0 1.4rem; }
+.year-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 1rem; }
 .year-filters[hidden] { display: none; }
-.year-filter { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .15rem; width: 82px; height: 82px; padding: 0; border: 1px solid #4c4e47; border-radius: 50%; background: #262724; color: var(--reading-muted); cursor: pointer; transition: color 180ms, border-color 180ms, background 180ms, transform 180ms; }
-.year-number { font: 400 1.2rem/1.3 Georgia, "Times New Roman", serif; font-variant-numeric: tabular-nums; }
-.year-count { font-size: .65rem; line-height: 1.5; }
-.year-filter:hover { color: #eeeade; border-color: #8a9a82; transform: translateY(-2px); }
-.year-filter.is-selected { color: var(--reading-accent); border-color: var(--reading-accent); background: #2c342c; box-shadow: inset 0 0 0 3px var(--background), inset 0 0 0 4px #6b7c65; }
+.year-filter { display: inline-flex; justify-content: center; align-items: center; gap: .6rem; min-height: 36px; padding: .35rem .85rem; border: 1px solid #4c4e47; border-radius: 999px; background: transparent; color: var(--reading-muted); cursor: pointer; transition: color 180ms, border-color 180ms, background 180ms; }
+.year-number { font: 500 .8rem/1.3 "Helvetica Neue", Arial, sans-serif; font-variant-numeric: tabular-nums; }
+.year-count { font-size: .65rem; line-height: 1.5; opacity: .8; }
+.year-filter:hover { color: #eeeade; border-color: #8a9a82; }
+.year-filter.is-selected { color: var(--reading-accent); border-color: #8fa78a; background: #2c342c; }
 
 /* The covers are the cards; captions stay quiet underneath. */
 .bookshelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; gap: 1.8rem 1.4rem; margin-top: 1.2rem; }
@@ -70,7 +70,6 @@ html.book-reader-open { overflow: hidden; }
 
 @media (max-width: 560px) {
   .bookshelf { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 1.1rem; }
-  .year-filter { width: 76px; height: 76px; }
   .book-reader { padding: 1.5rem; }
   .reader-heading { gap: 1rem; margin-right: .5rem; }
   .reader-cover { flex-basis: 60px; }
