@@ -7,8 +7,8 @@
     <title>Carter Falkenberg</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css?v=3" />
-    <link rel="stylesheet" href="reading.css?v=7" />
-    <script src="reading.js?v=4" defer></script>
+    <link rel="stylesheet" href="reading.css?v=8" />
+    <script src="reading.js?v=5" defer></script>
     <noscript><style>.shelf-filters, .year-filters { display: none; }</style></noscript>
   </head>
   <body id="top">
@@ -106,143 +106,386 @@
       </section>
 
       <section id="reading" aria-labelledby="reading-title">
+<!-- Generated reading shelf: scripts/build_books.py -->
         <div class="reading-heading">
           <h2 id="reading-title" class="section-label">reading</h2>
-          <div class="shelf-meta">
-            <span class="shelf-count" id="shelf-count" aria-live="polite">7 books</span>
-            <p class="sample-note">Sample books &amp; quotes.</p>
-          </div>
+          <span class="shelf-count" id="shelf-count" aria-live="polite">40 books</span>
         </div>
         <div class="shelf-filters" role="group" aria-label="Reading status">
-          <button type="button" data-filter="reading" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Reading <span>2</span></button>
-          <button type="button" data-filter="finished" aria-pressed="false" aria-controls="bookshelf">Finished <span>5</span></button>
+          <button type="button" data-filter="reading" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Reading <span>5</span></button>
+          <button type="button" data-filter="finished" aria-pressed="false" aria-controls="bookshelf">Finished <span>35</span></button>
         </div>
         <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year" hidden>
           <button type="button" class="year-filter" data-year="2025" aria-pressed="false" aria-controls="bookshelf" aria-label="Books finished in 2025">
-            <span class="year-number">2025</span><span class="year-count">2 books</span>
+            <span class="year-number">2025</span><span class="year-count">19 books</span>
           </button>
           <button type="button" class="year-filter is-selected" data-year="2026" aria-pressed="true" aria-controls="bookshelf" aria-label="Books finished in 2026">
-            <span class="year-number">2026</span><span class="year-count">3 books</span>
+            <span class="year-number">2026</span><span class="year-count">16 books</span>
           </button>
         </div>
         <div class="bookshelf" id="bookshelf" aria-labelledby="reading-title">
-          <article class="shelf-book" id="book-terra" data-status="reading" data-title="Terra Incognita" data-author="Nora Ellis" data-genre="Essays">
-            <button type="button" class="book-card" aria-label="Terra Incognita by Nora Ellis: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-terra" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Terra<br>Incognita</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Nora Ellis</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Nora Ellis</span><span class="book-status"><span class="reading-dot"></span>Reading</span></span>
+          <article class="shelf-book" id="book-protocols" data-status="reading" data-title="Protocols: An Operating Manual for the Human Body" data-author="Andrew D. Huberman" data-genre="Science">
+            <button type="button" class="book-card" aria-label="Protocols: An Operating Manual for the Human Body by Andrew D. Huberman: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/protocols.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Andrew D. Huberman</span></span>
             </button>
             <div class="book-note">
-              <p class="book-description">A collection of small observations about unfamiliar places and the things we bring with us.</p>
-              <h3 class="section-label">favorite quotes</h3>
-              <ul class="book-quotes">
-                <li><blockquote><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p></blockquote></li>
-              </ul>
+              <p class="book-description">A guide to science-based routines for sleep, exercise, stress, nutrition, focus, and learning.</p>
             </div>
           </article>
-          <article class="shelf-book" id="book-mare" data-status="reading" data-title="Mare Tranquillitatis" data-author="Julian Moss" data-genre="Fiction">
-            <button type="button" class="book-card" aria-label="Mare Tranquillitatis by Julian Moss: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-mare" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Mare<br>Tranquillitatis</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Julian Moss</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Julian Moss</span><span class="book-status"><span class="reading-dot"></span>Reading</span></span>
-            </button>
-            <div class="book-note"><p class="book-description">A quiet novel about a seaside town and a letter that arrives twenty years too late.</p></div>
-          </article>
-          <article class="shelf-book" id="book-lumen" data-status="finished" data-year="2026" data-title="Lumen et Umbra" data-author="Elias Vale" data-genre="Essays">
-            <button type="button" class="book-card" aria-label="Lumen et Umbra by Elias Vale: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-lumen" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Lumen<br>et Umbra</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Elias Vale</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Elias Vale</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+          <article class="shelf-book" id="book-enchiridion-and-discourses" data-status="reading" data-title="Epictetus — Enchiridion and Discourses" data-author="Epictetus" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Epictetus — Enchiridion and Discourses by Epictetus: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/enchiridion-and-discourses.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Epictetus</span></span>
             </button>
             <div class="book-note">
-              <p class="book-description">A collection of reflective essays about attention, memory, and the beauty of ordinary life.</p>
-              <h3 class="section-label">favorite quotes</h3>
-              <ul class="book-quotes">
-                <li><blockquote><p>“Praesent commodo cursus magna, vel scelerisque nisl consectetur et.”</p></blockquote></li>
-                <li><blockquote><p>“Aenean lacinia bibendum nulla sed consectetur.”</p></blockquote></li>
-              </ul>
+              <p class="book-description">A collection of Stoic teachings on judgment, self-discipline, and distinguishing what we can control from what we cannot.</p>
             </div>
           </article>
-          <article class="shelf-book" id="book-orbis" data-status="finished" data-year="2026" data-title="Orbis Alius" data-author="Ada Laurent" data-genre="Nonfiction">
-            <button type="button" class="book-card" aria-label="Orbis Alius by Ada Laurent: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-orbis" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Orbis<br>Alius</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Ada Laurent</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Ada Laurent</span><span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span></span>
+          <article class="shelf-book" id="book-the-mom-test" data-status="reading" data-title="The Mom Test" data-author="Rob Fitzpatrick" data-genre="Business">
+            <button type="button" class="book-card" aria-label="The Mom Test by Rob Fitzpatrick: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-mom-test.png" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Rob Fitzpatrick</span></span>
             </button>
             <div class="book-note">
-              <p class="book-description">An exploration of the hidden systems that shape how we see the world.</p>
-              <h3 class="section-label">favorite quotes</h3>
-              <ul class="book-quotes">
-                <li><blockquote><p>“Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”</p></blockquote></li>
-              </ul>
+              <p class="book-description">A practical guide to asking better customer questions and testing business ideas without relying on compliments or misleading feedback.</p>
             </div>
           </article>
-          <article class="shelf-book" id="book-ars" data-status="finished" data-year="2026" data-title="Ars Vivendi" data-author="Lucia Venn" data-genre="Philosophy">
-            <button type="button" class="book-card" aria-label="Ars Vivendi by Lucia Venn: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-ars" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Ars<br>Vivendi</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Lucia Venn</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Lucia Venn</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+          <article class="shelf-book" id="book-the-fellowship-of-the-ring" data-status="reading" data-title="The Fellowship of the Ring" data-author="J.R.R. Tolkien" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="The Fellowship of the Ring by J.R.R. Tolkien: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-fellowship-of-the-ring.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">J.R.R. Tolkien</span></span>
             </button>
             <div class="book-note">
-              <p class="book-description">A philosophical guide to living deliberately and finding meaning in everyday experience.</p>
-              <h3 class="section-label">favorite quotes</h3>
-              <ul class="book-quotes">
-                <li><blockquote><p>“Nulla vitae elit libero, a pharetra augue.”</p></blockquote></li>
-                <li><blockquote><p>“Etiam porta sem malesuada magna mollis euismod.”</p></blockquote></li>
-              </ul>
+              <p class="book-description">Frodo leaves the Shire with an unlikely fellowship to carry a dangerous ring toward its destruction.</p>
             </div>
           </article>
-          <article class="shelf-book" id="book-noctis" data-status="finished" data-year="2025" data-title="Noctis Silvarum" data-author="Theo Arden" data-genre="Fiction">
-            <button type="button" class="book-card" aria-label="Noctis Silvarum by Theo Arden: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-noctis" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Noctis<br>Silvarum</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Theo Arden</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Theo Arden</span><span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span></span>
+          <article class="shelf-book" id="book-crime-and-punishment" data-status="reading" data-title="Crime and Punishment" data-author="Fyodor Dostoevsky" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Crime and Punishment by Fyodor Dostoevsky: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/crime-and-punishment.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Fyodor Dostoevsky</span></span>
             </button>
             <div class="book-note">
-              <p class="book-description">A lyrical novel about a traveler who discovers a village hidden inside an ancient forest.</p>
-              <h3 class="section-label">favorite quotes</h3>
-              <ul class="book-quotes">
-                <li><blockquote><p>“Vestibulum id ligula porta felis euismod semper.”</p></blockquote></li>
-              </ul>
+              <p class="book-description">A young man in St Petersburg commits a murder and struggles with the moral reasoning and guilt that follow.</p>
             </div>
           </article>
-          <article class="shelf-book" id="book-tempus" data-status="finished" data-year="2025" data-title="Tempus Fugit" data-author="Milo West" data-genre="Mystery">
-            <button type="button" class="book-card" aria-label="Tempus Fugit by Milo West: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
-              <span class="book-cover cover-tempus" aria-hidden="true">
-                <span class="cover-imprint">MARGIN EDITIONS</span>
-                <span class="cover-name">Tempus<br>Fugit</span>
-                <span class="cover-art"></span>
-                <span class="cover-author">Milo West</span>
-              </span>
-              <span class="book-card-caption"><span class="book-author">Milo West</span><span class="book-rating" aria-label="Rated 4 out of 5"><span aria-hidden="true">★</span> 4<span class="rating-total">/5</span></span></span>
+          <article class="shelf-book" id="book-ai-engineering" data-status="finished" data-year="2026" data-title="AI Engineering: Building Applications with Foundation Models" data-author="Chip Huyen" data-genre="Technology">
+            <button type="button" class="book-card" aria-label="AI Engineering: Building Applications with Foundation Models by Chip Huyen: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/ai-engineering.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Chip Huyen</span></span>
             </button>
-            <div class="book-note"><p class="book-description">A fast-paced mystery about a missing clockmaker and a city where time has begun to disappear.</p></div>
+            <div class="book-note">
+              <p class="book-description">A practical guide to building applications with foundation models, covering evaluation, prompting, retrieval, fine-tuning, and deployment.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-psychology-of-money" data-status="finished" data-year="2026" data-title="The Psychology of Money" data-author="Morgan Housel" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="The Psychology of Money by Morgan Housel: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-psychology-of-money.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Morgan Housel</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Short stories explore how behavior, personal experience, and emotion shape financial decisions.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-how-to-change-your-mind" data-status="finished" data-year="2026" data-title="How to Change Your Mind" data-author="Michael Pollan" data-genre="Science">
+            <button type="button" class="book-card" aria-label="How to Change Your Mind by Michael Pollan: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/how-to-change-your-mind.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Michael Pollan</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An investigation into the history, science, and renewed research surrounding psychedelics and human consciousness.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-meditations-for-mortals" data-status="finished" data-year="2026" data-title="Meditations for Mortals" data-author="Oliver Burkeman" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Meditations for Mortals by Oliver Burkeman: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/meditations-for-mortals.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Oliver Burkeman</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Four weeks of reflections on accepting our limits and making room for what matters without waiting for life to become perfect.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-how-to-be-a-stoic" data-status="finished" data-year="2026" data-title="How to Be a Stoic" data-author="Massimo Pigliucci" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="How to Be a Stoic by Massimo Pigliucci: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/how-to-be-a-stoic.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Massimo Pigliucci</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An introduction to applying Stoic philosophy to everyday choices, relationships, and adversity.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-ego-is-the-enemy" data-status="finished" data-year="2026" data-title="Ego Is the Enemy" data-author="Ryan Holiday" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Ego Is the Enemy by Ryan Holiday: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/ego-is-the-enemy.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Ryan Holiday</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Historical stories examine how ego undermines learning, success, and recovery from failure.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-enchiridion" data-status="finished" data-year="2026" data-title="The Enchiridion of Epictetus" data-author="Epictetus" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="The Enchiridion of Epictetus by Epictetus: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-enchiridion.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Epictetus</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A concise handbook of Stoic advice on directing our judgments and actions rather than trying to control external events.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-four-thousand-weeks" data-status="finished" data-year="2026" data-title="Four Thousand Weeks: Time Management for Mortals" data-author="Oliver Burkeman" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Four Thousand Weeks: Time Management for Mortals by Oliver Burkeman: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/four-thousand-weeks.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Oliver Burkeman</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A reflection on our finite time and the freedom that comes from choosing what matters instead of trying to do everything.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-meaning-of-your-life" data-status="finished" data-year="2026" data-title="The Meaning of Your Life: Finding Purpose in an Age of Emptiness" data-author="Arthur C. Brooks" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="The Meaning of Your Life: Finding Purpose in an Age of Emptiness by Arthur C. Brooks: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-meaning-of-your-life.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Arthur C. Brooks</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An exploration of how modern life can obscure our sense of purpose and how philosophy, faith, and behavioral science can help restore it.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-tools-of-titans" data-status="finished" data-year="2026" data-title="Tools of Titans" data-author="Tim Ferriss" data-genre="Personal growth">
+            <button type="button" class="book-card" aria-label="Tools of Titans by Tim Ferriss: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/tools-of-titans.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Tim Ferriss</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A collection of routines, tools, and lessons drawn from interviews with performers, entrepreneurs, and other accomplished people.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-hobbit" data-status="finished" data-year="2026" data-title="The Hobbit" data-author="J.R.R. Tolkien" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="The Hobbit by J.R.R. Tolkien: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-hobbit.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">J.R.R. Tolkien</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Bilbo Baggins joins a company of dwarves on a journey to reclaim their mountain home from a dragon.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-endurance" data-status="finished" data-year="2026" data-title="Endurance: Shackleton’s Incredible Voyage" data-author="Alfred Lansing" data-genre="History">
+            <button type="button" class="book-card" aria-label="Endurance: Shackleton’s Incredible Voyage by Alfred Lansing: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/endurance.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Alfred Lansing</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">The account of Ernest Shackleton and his crew’s fight to survive after Antarctic ice traps and destroys their ship.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-siddhartha" data-status="finished" data-year="2026" data-title="Siddhartha" data-author="Hermann Hesse" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Siddhartha by Hermann Hesse: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/siddhartha.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Hermann Hesse</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A young man in ancient India searches for spiritual understanding through asceticism, worldly experience, and life beside a river.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-happiness-files" data-status="finished" data-year="2026" data-title="The Happiness Files: Insights on Work and Life" data-author="Arthur C. Brooks" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="The Happiness Files: Insights on Work and Life by Arthur C. Brooks: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-happiness-files.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Arthur C. Brooks</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A collection of research-informed essays on building a happier life through better habits, relationships, work, and definitions of success.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-disciplined-entrepreneurship" data-status="finished" data-year="2026" data-title="Disciplined Entrepreneurship: 24 Steps to a Successful Startup" data-author="Bill Aulet" data-genre="Business">
+            <button type="button" class="book-card" aria-label="Disciplined Entrepreneurship: 24 Steps to a Successful Startup by Bill Aulet: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/disciplined-entrepreneurship.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Bill Aulet</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A structured approach to developing a startup, from selecting a market and understanding customers to testing a sustainable business model.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-project-hail-mary" data-status="finished" data-year="2026" data-title="Project Hail Mary" data-author="Andy Weir" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Project Hail Mary by Andy Weir: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/project-hail-mary.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Andy Weir</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A lone astronaut wakes with little memory and must unravel a scientific mystery threatening the survival of Earth.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-make-change-that-lasts" data-status="finished" data-year="2025" data-title="Make Change That Lasts" data-author="Rangan Chatterjee" data-genre="Personal growth">
+            <button type="button" class="book-card" aria-label="Make Change That Lasts by Rangan Chatterjee: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/make-change-that-lasts.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Rangan Chatterjee</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A guide to changing habitual responses to stress and uncertainty by developing greater self-understanding and independence from external circumstances.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-thinking-fast-and-slow" data-status="finished" data-year="2025" data-title="Thinking, Fast and Slow" data-author="Daniel Kahneman" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="Thinking, Fast and Slow by Daniel Kahneman: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/thinking-fast-and-slow.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Daniel Kahneman</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An exploration of fast intuition, deliberate reasoning, and the biases that influence our judgments and decisions.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-mathematics-for-machine-learning" data-status="finished" data-year="2025" data-title="Mathematics for Machine Learning" data-author="Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong" data-genre="Technology">
+            <button type="button" class="book-card" aria-label="Mathematics for Machine Learning by Marc Peter Deisenroth, A. Aldo Faisal, and Cheng Soon Ong: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/mathematics-for-machine-learning.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Deisenroth, Faisal &amp; Ong</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A textbook connecting linear algebra, calculus, probability, and optimization to the foundations of machine learning.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-mans-search-for-meaning" data-status="finished" data-year="2025" data-title="Man’s Search for Meaning" data-author="Viktor E. Frankl" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="Man’s Search for Meaning by Viktor E. Frankl: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/mans-search-for-meaning.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Viktor E. Frankl</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Frankl combines his experiences in Nazi concentration camps with an account of logotherapy and the human search for meaning.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-how-to-cook-without-a-book" data-status="finished" data-year="2025" data-title="How to Cook Without a Book" data-author="Pam Anderson" data-genre="Cooking">
+            <button type="button" class="book-card" aria-label="How to Cook Without a Book by Pam Anderson: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/how-to-cook-without-a-book.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Pam Anderson</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A guide to learning adaptable cooking techniques and formulas so everyday meals can come together without following a recipe.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-deep-learning" data-status="finished" data-year="2025" data-title="Deep Learning" data-author="Ian Goodfellow, Yoshua Bengio, and Aaron Courville" data-genre="Technology">
+            <button type="button" class="book-card" aria-label="Deep Learning by Ian Goodfellow, Yoshua Bengio, and Aaron Courville: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/deep-learning.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Goodfellow, Bengio &amp; Courville</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A textbook covering the mathematical foundations, practical techniques, and research directions of deep neural networks.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-code-complete" data-status="finished" data-year="2025" data-title="Code Complete, 2nd Edition" data-author="Steve McConnell" data-genre="Technology">
+            <button type="button" class="book-card" aria-label="Code Complete, 2nd Edition by Steve McConnell: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/code-complete.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Steve McConnell</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A guide to software construction, covering code design, implementation, debugging, and practices for building maintainable programs.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-never-split-the-difference" data-status="finished" data-year="2025" data-title="Never Split the Difference" data-author="Chris Voss with Tahl Raz" data-genre="Business">
+            <button type="button" class="book-card" aria-label="Never Split the Difference by Chris Voss with Tahl Raz: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/never-split-the-difference.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Chris Voss with Tahl Raz</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A former FBI hostage negotiator explains how listening, empathy, and carefully framed questions can improve negotiations.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-stranger" data-status="finished" data-year="2025" data-title="The Stranger" data-author="Albert Camus" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="The Stranger by Albert Camus: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-stranger.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Albert Camus</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An emotionally detached man in Algeria commits a killing and confronts a society determined to make sense of his actions.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-think-and-grow-rich" data-status="finished" data-year="2025" data-title="Think and Grow Rich" data-author="Napoleon Hill" data-genre="Personal growth">
+            <button type="button" class="book-card" aria-label="Think and Grow Rich by Napoleon Hill: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/think-and-grow-rich.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Napoleon Hill</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Hill sets out his philosophy of achievement through definite goals, persistence, planning, and collaboration.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-psycho-cybernetics" data-status="finished" data-year="2025" data-title="Psycho-Cybernetics" data-author="Maxwell Maltz" data-genre="Personal growth">
+            <button type="button" class="book-card" aria-label="Psycho-Cybernetics by Maxwell Maltz: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/psycho-cybernetics.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Maxwell Maltz</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An exploration of how self-image, visualization, and habits influence confidence and the pursuit of goals.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-so-good-they-cant-ignore-you" data-status="finished" data-year="2025" data-title="So Good They Can’t Ignore You" data-author="Cal Newport" data-genre="Career">
+            <button type="button" class="book-card" aria-label="So Good They Can’t Ignore You by Cal Newport: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/so-good-they-cant-ignore-you.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Cal Newport</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An argument that valuable skills and deliberate practice provide a stronger foundation for meaningful work than searching for a preexisting passion.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-animal-farm" data-status="finished" data-year="2025" data-title="Animal Farm" data-author="George Orwell" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Animal Farm by George Orwell: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/animal-farm.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">George Orwell</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Farm animals overthrow their human owner only to watch their hopes for equality give way to a new tyranny.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-the-next-conversation" data-status="finished" data-year="2025" data-title="The Next Conversation: Argue Less, Talk More" data-author="Jefferson Fisher" data-genre="Communication">
+            <button type="button" class="book-card" aria-label="The Next Conversation: Argue Less, Talk More by Jefferson Fisher: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/the-next-conversation.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Jefferson Fisher</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A guide to communicating calmly, setting boundaries, and navigating difficult conversations without escalating conflict.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-build-the-life-you-want" data-status="finished" data-year="2025" data-title="Build the Life You Want" data-author="Arthur C. Brooks and Oprah Winfrey" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="Build the Life You Want by Arthur C. Brooks and Oprah Winfrey: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/build-the-life-you-want.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Brooks &amp; Winfrey</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">A guide to cultivating happiness through emotional self-management and stronger connections to family, friendship, work, and faith.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-mindset" data-status="finished" data-year="2025" data-title="Mindset: The New Psychology of Success" data-author="Carol S. Dweck" data-genre="Psychology">
+            <button type="button" class="book-card" aria-label="Mindset: The New Psychology of Success by Carol S. Dweck: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/mindset.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Carol S. Dweck</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An examination of how beliefs about whether abilities can develop affect learning, motivation, and responses to setbacks.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-harry-potter-and-the-deathly-hallows" data-status="finished" data-year="2025" data-title="Harry Potter and the Deathly Hallows" data-author="J.K. Rowling" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Harry Potter and the Deathly Hallows by J.K. Rowling: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/harry-potter-and-the-deathly-hallows.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">J.K. Rowling</span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Harry, Ron, and Hermione leave Hogwarts to seek the objects that could finally make Voldemort vulnerable.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-letters-from-a-stoic" data-status="finished" data-year="2025" data-title="Letters from a Stoic" data-author="Seneca" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Letters from a Stoic by Seneca: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/letters-from-a-stoic.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Seneca</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">Letters to Lucilius offer Stoic reflections on friendship, mortality, adversity, and living according to reason.</p>
+            </div>
+          </article>
+          <article class="shelf-book" id="book-what-the-buddha-taught" data-status="finished" data-year="2025" data-title="What the Buddha Taught" data-author="Walpola Rahula" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="What the Buddha Taught by Walpola Rahula: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover" aria-hidden="true"><img src="assets/books/what-the-buddha-taught.jpg" alt="" loading="lazy" decoding="async" /></span>
+              <span class="book-card-caption"><span class="book-author">Walpola Rahula</span><span class="book-rating" aria-label="Rated 4 out of 5"><span aria-hidden="true">★</span> 4<span class="rating-total">/5</span></span></span>
+            </button>
+            <div class="book-note">
+              <p class="book-description">An introduction to the Buddha’s central teachings, including the Four Noble Truths, the Eightfold Path, and meditation.</p>
+            </div>
           </article>
         </div>
+        <!-- End generated reading shelf -->
         <dialog class="book-reader" id="book-reader" aria-labelledby="reader-title">
           <button type="button" class="reader-close" aria-label="Close book details" autofocus>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>

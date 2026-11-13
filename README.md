@@ -2,7 +2,7 @@
 
 A small personal site built with plain HTML, CSS, and JavaScript. It has no build step or dependencies.
 
-The design takes its cue from [Sean Goedecke's website](https://www.seangoedecke.com/): a narrow text column, charcoal background, serif body text, a bold name heading, and pale blue links. This homepage includes an introduction, selected projects, writing, an interactive reading shelf, and a GitHub link. Descriptive copy, project titles, writing, and books remain placeholders.
+The design takes its cue from [Sean Goedecke's website](https://www.seangoedecke.com/): a narrow text column, charcoal background, serif body text, a bold name heading, and pale blue links. This homepage includes an introduction, selected projects, writing, an interactive reading shelf, and a GitHub link. Descriptive copy, project titles, and writing remain placeholders; the reading shelf contains real books.
 
 ## Preview locally
 
@@ -24,9 +24,17 @@ Replace the Lorem Ipsum text and project names in `index.html`. Adjust the basic
 
 ## Reading section
 
-The reading section uses `reading.css` and `reading.js`, keeping the original site's dark, text-first layout. It includes seven clearly marked sample books in a grid of illustrated cover cards, Reading and Finished filters, and ratings. Clicking a cover opens a native dialog with its one-sentence description and optional favorite quotes; Escape, the close button, or the backdrop dismisses it and restores focus to the cover. Finished books are filtered by circular 2025/2026 selectors, defaulting to 2026. Saved `#book-…` links select the correct status and year and open the book. Keyboard controls and reduced-motion preferences are supported; all books and quotes remain readable inline without JavaScript.
+The reading section uses `reading.css` and `reading.js`. The catalog contains 40 books supplied from Goodreads screenshots: 5 currently reading, 19 finished in 2025, and 16 finished in 2026. The cards use locally hosted cover images in `assets/books/`, preserving each image’s proportions. Only ratings explicitly visible in the supplied screenshots are included; favorite quotes are empty until supplied.
 
-Replace the sample books, descriptions, and quotes in `index.html` with real content. Each book has a `data-status` of `reading` or `finished`; finished books also have a `data-year` matching a year selector. Omit the favorite-quotes heading and list when a book has no quotes. All filter counts are calculated from the book entries. Add another `.year-filter` button to support a new year and use `aria-pressed="true"` to choose the default year.
+Clicking a cover opens a native dialog with its one-sentence description and any favorite quotes. Escape, the close button, or the backdrop dismisses it and restores focus to the cover. Finished books are filtered by circular year selectors, defaulting to the latest year. Saved `#book-…` links select the correct status and year and open the book. All descriptions and quotes remain readable inline without JavaScript.
+
+Edit `data/books.json` to maintain the catalog. Each record includes a unique ID, title, author, genre, status, cover path, one-sentence description, and quotes array. Finished books have a year; ratings and abbreviated author captions are optional. Source links record the book and cover provenance and are not fetched by visitors. Add a local cover asset, then regenerate the static shelf and filter counts:
+
+```sh
+/usr/bin/python3 scripts/build_books.py
+```
+
+Commit the catalog, generated `index.html`, and cover assets together. The site itself still needs no build step or dependencies.
 
 ## Writing section
 

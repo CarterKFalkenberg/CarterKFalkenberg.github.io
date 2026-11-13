@@ -6,10 +6,8 @@
 
 .reading-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: .4rem 1rem; margin-bottom: .7rem; }
 .reading-heading h2 { margin: 0; }
-.sample-note, .shelf-count, .shelf-filters, .year-count, .book-byline, .book-status, .book-rating { font-family: "Helvetica Neue", Arial, sans-serif; }
+.sample-note, .shelf-count, .shelf-filters, .year-count, .book-rating { font-family: "Helvetica Neue", Arial, sans-serif; }
 .sample-note { color: var(--reading-muted); font-size: .75rem; }
-.shelf-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .3rem .8rem; }
-.shelf-meta .sample-note { margin: 0; }
 .shelf-count { font-size: .7rem; color: var(--reading-muted); }
 
 .shelf-filters { display: flex; gap: 1.5rem; margin-bottom: .5rem; }
@@ -33,36 +31,13 @@
 .shelf-book { min-width: 0; scroll-margin-top: 2rem; }
 .shelf-book[hidden] { display: none; }
 .book-card { display: block; width: 100%; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
-.book-cover { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; width: 100%; aspect-ratio: 2 / 3; padding: .7em .65em .7em .85em; color: var(--cover-ink); background: var(--cover-color); font-size: var(--cover-type, clamp(1.25rem, 3.5vw, 1.85rem)); border-radius: 2px 5px 5px 2px; box-shadow: inset 4px 0 3px #0003, inset 7px 0 0 #ffffff16, 4px 5px 0 -2px #aaa18c, 7px 9px 14px #0003; transition: transform 220ms, box-shadow 220ms; }
-.book-cover::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .2; background: repeating-linear-gradient(80deg, transparent 0 2px, #00000016 2px 3px); mix-blend-mode: multiply; }
-.cover-imprint { position: relative; z-index: 1; font: 500 .22em/1.5 "Helvetica Neue", Arial, sans-serif; letter-spacing: .17em; }
-.cover-name { position: relative; z-index: 1; margin-top: .75em; font-size: 1em; font-weight: 400; letter-spacing: -.035em; line-height: 1.08; }
-.cover-author { position: relative; z-index: 1; margin-top: auto; font: 500 .26em/1.5 "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: .18em; }
-.cover-art { position: absolute; width: 85%; aspect-ratio: 1; right: -25%; bottom: 14%; border: 1px solid currentColor; border-radius: 50%; opacity: .45; }
-.cover-art::before, .cover-art::after { content: ""; position: absolute; inset: 12%; border: 1px solid currentColor; border-radius: inherit; }
-.cover-art::after { inset: 24%; }
-.cover-lumen { --cover-color: #cbc1a7; --cover-ink: #333b33; }
-.cover-orbis { --cover-color: #a4b7bd; --cover-ink: #273e47; }
-.cover-ars { --cover-color: #a4b09a; --cover-ink: #293d33; }
-.cover-noctis { --cover-color: #777c97; --cover-ink: #f1e6cd; }
-.cover-tempus { --cover-color: #be886d; --cover-ink: #382c27; }
-.cover-terra { --cover-color: #bca87f; --cover-ink: #44392a; }
-.cover-mare { --cover-color: #899fa9; --cover-ink: #233f4d; }
-.cover-orbis .cover-art { right: -3%; width: 60%; border-radius: 0; transform: rotate(45deg); }
-.cover-ars .cover-art { width: 65%; right: 13%; bottom: 16%; border-radius: 50% 50% 0 0; }
-.cover-noctis .cover-art { width: 50%; right: 20%; bottom: 23%; background: currentColor; border: 0; }
-.cover-noctis .cover-art::before { inset: -13% -22% 15% 24%; border: 0; background: var(--cover-color); }
-.cover-noctis .cover-art::after { display: none; }
-.cover-tempus .cover-art { width: 30%; right: 15%; bottom: 10%; border-radius: 0; transform: rotate(27deg); }
-.cover-terra .cover-art { right: 0; bottom: 16%; width: 100%; border-radius: 0; clip-path: polygon(0 100%, 45% 20%, 65% 60%, 80% 35%, 100% 100%); background: currentColor; border: 0; }
-.cover-mare .cover-name { font-size: .68em; line-height: 1.2; }
-.cover-mare .cover-art { width: 120%; right: -10%; bottom: -26%; }
-.book-card:hover .book-cover { transform: translateY(-5px) rotate(-1deg); box-shadow: inset 4px 0 3px #0003, inset 7px 0 0 #ffffff16, 4px 5px 0 -2px #aaa18c, 9px 14px 20px #0004; }
+.book-cover { display: flex; align-items: flex-end; justify-content: center; width: 100%; aspect-ratio: 2 / 3; transition: transform 220ms; }
+.book-cover img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 5px 6px #0004); }
+.book-card:hover .book-cover { transform: translateY(-5px) rotate(-1deg); }
 .book-card:active .book-cover { transform: translateY(-1px); }
 .book-card-caption { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .25rem .5rem; margin-top: .85rem; }
-.book-author, .book-status, .book-rating { font: 400 .7rem/1.5 "Helvetica Neue", Arial, sans-serif; color: var(--reading-muted); }
-.book-status, .book-rating { white-space: nowrap; }
-.reading-dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--reading-accent); margin-right: .3rem; vertical-align: middle; }
+.book-author, .book-rating { font: 400 .7rem/1.5 "Helvetica Neue", Arial, sans-serif; color: var(--reading-muted); }
+.book-rating { white-space: nowrap; }
 .book-rating { color: #d2c7a6; font-variant-numeric: tabular-nums; }
 .book-rating > span:first-child { font-size: .68rem; margin-right: .15rem; }
 .rating-total { color: var(--reading-muted); font-size: .65rem; margin-left: .1rem; }
@@ -78,7 +53,7 @@ html.book-reader-open { overflow: hidden; }
 .reader-close { position: absolute; display: grid; place-items: center; top: .5rem; right: .5rem; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: transparent; color: var(--reading-muted); cursor: pointer; }
 .reader-close:hover { background: #ffffff0a; color: var(--text); }
 .reader-heading { display: flex; align-items: center; gap: 1.35rem; margin: .35rem 1rem 1.7rem 0; }
-.reader-cover { flex: 0 0 76px; --cover-type: 13px; }
+.reader-cover { flex: 0 0 76px; }
 .reader-identity { min-width: 0; }
 .reader-identity h3 { margin: 0 0 .4rem; font-size: 1.65rem; line-height: 1.2; font-weight: 400; letter-spacing: -.025em; }
 #reader-byline, #reader-rating { margin: 0; color: var(--reading-muted); font: 400 .78rem/1.7 "Helvetica Neue", Arial, sans-serif; }
@@ -98,7 +73,7 @@ html.book-reader-open { overflow: hidden; }
   .year-filter { width: 76px; height: 76px; }
   .book-reader { padding: 1.5rem; }
   .reader-heading { gap: 1rem; margin-right: .5rem; }
-  .reader-cover { flex-basis: 60px; --cover-type: 10px; }
+  .reader-cover { flex-basis: 60px; }
   .reader-identity h3 { font-size: 1.4rem; }
 }
 @media (max-width: 360px) {

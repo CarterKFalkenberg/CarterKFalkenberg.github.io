@@ -24,8 +24,10 @@
     openedFrom = book.querySelector('.book-card');
     reader.querySelector('#reader-title').textContent = book.dataset.title;
     reader.querySelector('#reader-byline').textContent = [book.dataset.author, book.dataset.genre, book.dataset.year].filter(Boolean).join(' · ');
-    reader.querySelector('#reader-rating').textContent = book.querySelector('.book-rating')?.getAttribute('aria-label') || 'Currently reading';
-    reader.querySelector('#reader-cover').replaceChildren(book.querySelector('.book-cover').cloneNode(true));
+    reader.querySelector('#reader-rating').textContent = book.querySelector('.book-rating')?.getAttribute('aria-label') || (book.dataset.status === 'reading' ? 'Currently reading' : `Finished in ${book.dataset.year}`);
+    const cover = book.querySelector('.book-cover').cloneNode(true);
+    cover.querySelector('img').loading = 'eager';
+    reader.querySelector('#reader-cover').replaceChildren(cover);
     reader.querySelector('#reader-content').replaceChildren(book.querySelector('.book-note').cloneNode(true));
     document.documentElement.classList.add('book-reader-open');
     reader.scrollTop = 0;
