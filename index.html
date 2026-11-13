@@ -112,10 +112,10 @@
           <span class="shelf-count" id="shelf-count" aria-live="polite">40 books</span>
         </div>
         <div class="shelf-filters" role="group" aria-label="Reading status">
-          <button type="button" data-filter="reading" aria-pressed="false" aria-controls="bookshelf">Reading <span>5</span></button>
-          <button type="button" data-filter="finished" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Finished <span>35</span></button>
+          <button type="button" data-filter="reading" class="is-selected" aria-pressed="true" aria-controls="bookshelf">Reading <span>5</span></button>
+          <button type="button" data-filter="finished" aria-pressed="false" aria-controls="bookshelf">Finished <span>35</span></button>
         </div>
-        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year">
+        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year" hidden>
           <button type="button" class="year-filter is-selected" data-year="2026" aria-pressed="true" aria-controls="bookshelf" aria-label="Books finished in 2026">
             <span class="year-number">2026</span><span class="year-count">16 books</span>
           </button>

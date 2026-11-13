@@ -35,9 +35,9 @@ def build():
         <div class="shelf-filters" role="group" aria-label="Reading status">''' % len(books)]
     for status, label in [('reading', 'Reading'), ('finished', 'Finished')]:
         count = sum(book['status'] == status for book in books)
-        selected = status == 'finished'
+        selected = status == 'reading'
         rows.append(f'          <button type="button" data-filter="{status}"' + (' class="is-selected"' if selected else '') + f' aria-pressed="{str(selected).lower()}" aria-controls="bookshelf">{label} <span>{count}</span></button>')
-    rows.extend(['        </div>', '        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year">'])
+    rows.extend(['        </div>', '        <div class="year-filters" id="year-filters" role="group" aria-label="Filter finished books by year" hidden>'])
     for year in years:
         selected = year == max(years)
         count = sum(book.get('year') == year for book in books)
