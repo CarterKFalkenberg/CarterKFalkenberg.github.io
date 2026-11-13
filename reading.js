@@ -1,161 +1,69 @@
 (() => {
   'use strict';
 
-  const books = {
-    lumen: { title: 'Lumen et Umbra', cover: 'Lumen<br>et Umbra', author: 'Elias Vale', note: 'A quiet reminder to pay attention. The kind of book that feels a little different every time you return to it.' },
-    orbis: { title: 'Orbis Alius', cover: 'Orbis<br>Alius', author: 'Ada Laurent', note: 'A window into a world I’d walked past without noticing. It left me with better questions than the ones I started with.' },
-    ars: { title: 'Ars Vivendi', cover: 'Ars<br>Vivendi', author: 'Lucia Venn', note: 'On living deliberately, staying curious, and finding enough in the everyday. Plenty of underlines in this one.' },
-    noctis: { title: 'Noctis Silvarum', cover: 'Noctis<br>Silvarum', author: 'Theo Arden', note: 'A strange little world, beautifully built. I finished the story and immediately missed being inside it.' },
-    tempus: { title: 'Tempus Fugit', cover: 'Tempus<br>Fugit', author: 'Milo West', note: 'The “one more chapter” book that turned into a very late night. Every answer opens another door.' },
-  };
   const section = document.querySelector('#reading');
   if (!section) return;
 
-  const choices = [...section.querySelectorAll('.book-choice')];
-  const worm = section.querySelector('.bookworm');
-  const wormSvg = worm.querySelector('svg');
-  const pupils = worm.querySelector('.worm-pupils');
-  const answer = section.querySelector('.book-answer');
-  const cover = section.querySelector('.featured-cover');
-  const filters = [...section.querySelectorAll('[data-filter]')];
-  const shelfBooks = [...section.querySelectorAll('.shelf-book')];
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  let selected = choices[0];
-  let currentAnimation;
-  let coverAnimation;
-  let wormTimer;
-  let gazeFrame = 0;
-  let pointerPosition = null;
+  const books = [...section.querySelectorAll('.shelf-book')];
+  const statusButtons = [...section.querySelectorAll('[data-filter]')];
+  const yearButtons = [...section.querySelectorAll('.year-filter')];
+  const years = section.querySelector('#year-filters');
+  const count = section.querySelector('#shelf-count');
+  const empty = section.querySelector('#shelf-empty');
+  let status = 'reading';
+  let year = yearButtons.find(button => button.getAttribute('aria-pressed') === 'true').dataset.year;
 
-  function updateGaze() {
-    gazeFrame = 0;
-    if (!pointerPosition || reducedMotion.matches) return;
-    // Work in SVG coordinates so the gaze stays accurate during a hop or zoom.
-    const matrix = wormSvg.getScreenCTM();
-    if (!matrix) return;
-    const point = wormSvg.createSVGPoint();
-    point.x = pointerPosition.x;
-    point.y = pointerPosition.y;
-    const local = point.matrixTransform(matrix.inverse());
-    const dx = local.x - 29;
-    const dy = local.y - 12.5;
-    // Keep both pupils comfortably inside their glasses, even at the page edges.
-    const scale = 1.4 / Math.max(35, Math.hypot(dx, dy));
-    pupils.style.transform = `translate(${dx * scale}px, ${dy * scale}px)`;
-    if (worm.classList.contains('is-travelling')) queueGaze();
+  function bookCount(total) {
+    return `${total} ${total === 1 ? 'book' : 'books'}`;
   }
 
-  function queueGaze() {
-    if (pointerPosition && !reducedMotion.matches && !gazeFrame) {
-      gazeFrame = requestAnimationFrame(updateGaze);
-    }
-  }
-
-  function resetGaze() {
-    pointerPosition = null;
-    cancelAnimationFrame(gazeFrame);
-    gazeFrame = 0;
-    pupils.style.transform = 'translate(0px, 0px)';
-  }
-
-  function positionWorm() {
-    worm.style.transform = `translateY(${selected.offsetTop + (selected.offsetHeight - worm.offsetHeight) / 2}px)`;
-    queueGaze();
-  }
-
-  function pickBook(button) {
-    if (selected === button) return;
-    selected = button;
-    choices.forEach(choice => {
-      const active = choice === button;
-      choice.classList.toggle('is-selected', active);
-      choice.setAttribute('aria-pressed', String(active));
+  function renderShelf() {
+    statusButtons.forEach(button => {
+      const selected = button.dataset.filter === status;
+      button.classList.toggle('is-selected', selected);
+      button.setAttribute('aria-pressed', String(selected));
+      button.querySelector('span').textContent = books.filter(book => book.dataset.status === button.dataset.filter).length;
     });
-    positionWorm();
-    clearTimeout(wormTimer);
-    worm.classList.remove('is-travelling');
-    // Restart the small wiggle even when a visitor changes their mind mid-hop.
-    void worm.offsetWidth;
-    worm.classList.add('is-travelling');
-    queueGaze();
-    wormTimer = setTimeout(() => worm.classList.remove('is-travelling'), 580);
-
-    const book = books[button.dataset.pick];
-    cover.className = `featured-cover cover-${button.dataset.pick}`;
-    cover.querySelector('.cover-title').innerHTML = book.cover;
-    cover.querySelector('.cover-author').textContent = book.author.toUpperCase();
-    section.querySelector('#featured-title').textContent = book.title;
-    section.querySelector('#featured-author').textContent = book.author;
-    section.querySelector('#featured-note').textContent = book.note;
-    section.querySelector('#shelf-link').href = `#book-${button.dataset.pick}`;
-
-    currentAnimation?.cancel();
-    coverAnimation?.cancel();
-    if (!reducedMotion.matches && answer.animate) {
-      currentAnimation = answer.animate([
-        { opacity: 0, transform: 'translateY(9px)' },
-        { opacity: 1, transform: 'translateY(0)' },
-      ], { duration: 420, easing: 'cubic-bezier(.22, 1, .36, 1)' });
-      coverAnimation = cover.animate([
-        { transform: 'rotate(2deg) translateY(4px)' },
-        { transform: 'rotate(-4deg) translateY(0)' },
-      ], { duration: 580, easing: 'cubic-bezier(.22, 1, .36, 1)' });
-    }
-  }
-
-  function filterShelf(value) {
-    filters.forEach(button => {
-      const active = button.dataset.filter === value;
-      button.classList.toggle('is-selected', active);
-      button.setAttribute('aria-pressed', String(active));
+    years.hidden = status !== 'finished';
+    yearButtons.forEach(button => {
+      const selected = button.dataset.year === year;
+      button.classList.toggle('is-selected', selected);
+      button.setAttribute('aria-pressed', String(selected));
+      const total = books.filter(book => book.dataset.status === 'finished' && book.dataset.year === button.dataset.year).length;
+      button.querySelector('.year-count').textContent = bookCount(total);
     });
+
     let visible = 0;
-    shelfBooks.forEach(book => {
-      book.hidden = value !== 'all' && book.dataset.status !== value;
+    books.forEach(book => {
+      book.hidden = book.dataset.status !== status || (status === 'finished' && book.dataset.year !== year);
       if (!book.hidden) visible++;
     });
-    section.querySelector('#shelf-count').textContent = `${visible} ${visible === 1 ? 'book' : 'books'}`;
+    count.textContent = bookCount(visible);
+    empty.hidden = visible !== 0;
   }
 
-  choices.forEach(button => {
-    button.setAttribute('aria-controls', 'book-answer');
-    button.addEventListener('click', () => pickBook(button));
-  });
-  filters.forEach(button => {
-    button.querySelector('span').textContent = shelfBooks.filter(book => button.dataset.filter === 'all' || book.dataset.status === button.dataset.filter).length;
-  });
-  filters.forEach(button => button.addEventListener('click', () => filterShelf(button.dataset.filter)));
-  section.querySelector('#shelf-link').addEventListener('click', event => {
-    event.preventDefault();
-    filterShelf('all');
-    const target = document.getElementById(`book-${selected.dataset.pick}`);
-    target.open = true;
-    target.querySelector('summary').focus({ preventScroll: true });
-    target.scrollIntoView({ behavior: reducedMotion.matches ? 'instant' : 'smooth', block: 'center' });
-    history.replaceState(null, '', `#${target.id}`);
-  });
+  statusButtons.forEach(button => button.addEventListener('click', () => {
+    status = button.dataset.filter;
+    renderShelf();
+  }));
+  yearButtons.forEach(button => button.addEventListener('click', () => {
+    year = button.dataset.year;
+    renderShelf();
+  }));
 
-  // Direct links to a title should reveal its note as well.
-  function revealHash() {
-    const target = shelfBooks.find(book => `#${book.id}` === location.hash);
-    if (target) {
-      filterShelf('all');
-      target.open = true;
-    }
+  // A saved book link selects its status and year before opening its quotes.
+  function revealLinkedBook() {
+    const book = books.find(book => `#${book.id}` === location.hash);
+    if (!book) return;
+    status = book.dataset.status;
+    if (status === 'finished') year = book.dataset.year;
+    renderShelf();
+    book.open = true;
+    book.querySelector('summary').focus({ preventScroll: true });
+    book.scrollIntoView({ block: 'start', behavior: 'instant' });
   }
-  window.addEventListener('hashchange', revealHash);
-  window.addEventListener('pointermove', event => {
-    if (event.pointerType === 'touch' || reducedMotion.matches) return;
-    pointerPosition = { x: event.clientX, y: event.clientY };
-    queueGaze();
-  }, { passive: true });
-  document.documentElement.addEventListener('pointerleave', resetGaze);
-  window.addEventListener('blur', resetGaze);
-  window.addEventListener('scroll', queueGaze, { passive: true });
-  reducedMotion.addEventListener('change', resetGaze);
-  window.addEventListener('resize', positionWorm);
-  document.fonts?.ready.then(positionWorm);
-  positionWorm();
-  filterShelf('all');
-  revealHash();
+
+  window.addEventListener('hashchange', revealLinkedBook);
+  renderShelf();
+  revealLinkedBook();
 })();

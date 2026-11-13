@@ -24,9 +24,9 @@ Replace the Lorem Ipsum text and project names in `index.html`. Adjust the basic
 
 ## Reading section
 
-The reading section uses `reading.css` and `reading.js`, keeping the original site's dark, text-first layout. It includes seven clearly marked sample books, reading/finished filters, ratings, and expandable notes. The sentence picker animates a little bookworm to the selected recommendation and links directly to its shelf note. Keyboard controls and reduced-motion preferences are supported; the catalog and notes also work without JavaScript.
+The reading section uses `reading.css` and `reading.js`, keeping the original site's dark, text-first layout. It includes seven clearly marked sample books, Reading and Finished filters, ratings, and expandable one-sentence descriptions with optional favorite quotes. Finished books are filtered by circular 2025/2026 selectors, defaulting to 2026. Saved `#book-…` links select the correct status and year and open the book. Keyboard controls and reduced-motion preferences are supported; all books and quotes remain available without JavaScript.
 
-Replace the sample shelf entries in `index.html` and the five recommendation records at the top of `reading.js` with real books. Keep each recommendation key matched to its shelf entry's `book-` ID and cover class. Filter counts are calculated from shelf entries when JavaScript is available.
+Replace the sample books, descriptions, and quotes in `index.html` with real content. Each book has a `data-status` of `reading` or `finished`; finished books also have a `data-year` matching a year selector. Omit the favorite-quotes heading and list when a book has no quotes. All filter counts are calculated from the book entries. Add another `.year-filter` button to support a new year and use `aria-pressed="true"` to choose the default year.
 
 ## Writing section
 
