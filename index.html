@@ -7,8 +7,8 @@
     <title>Carter Falkenberg</title>
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="styles.css?v=3" />
-    <link rel="stylesheet" href="reading.css?v=6" />
-    <script src="reading.js?v=3" defer></script>
+    <link rel="stylesheet" href="reading.css?v=7" />
+    <script src="reading.js?v=4" defer></script>
     <noscript><style>.shelf-filters, .year-filters { display: none; }</style></noscript>
   </head>
   <body id="top">
@@ -126,12 +126,16 @@
           </button>
         </div>
         <div class="bookshelf" id="bookshelf" aria-labelledby="reading-title">
-          <details class="shelf-book" id="book-terra" data-status="reading">
-            <summary>
-              <span class="mini-cover cover-terra" aria-hidden="true">T</span>
-              <span class="book-meta"><span class="book-title">Terra Incognita</span><span class="book-byline">Nora Ellis <span>·</span> Essays</span></span>
-              <span class="book-status"><span class="reading-dot"></span>Reading</span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          <article class="shelf-book" id="book-terra" data-status="reading" data-title="Terra Incognita" data-author="Nora Ellis" data-genre="Essays">
+            <button type="button" class="book-card" aria-label="Terra Incognita by Nora Ellis: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-terra" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Terra<br>Incognita</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Nora Ellis</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Nora Ellis</span><span class="book-status"><span class="reading-dot"></span>Reading</span></span>
+            </button>
             <div class="book-note">
               <p class="book-description">A collection of small observations about unfamiliar places and the things we bring with us.</p>
               <h3 class="section-label">favorite quotes</h3>
@@ -139,21 +143,29 @@
                 <li><blockquote><p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p></blockquote></li>
               </ul>
             </div>
-          </details>
-          <details class="shelf-book" id="book-mare" data-status="reading">
-            <summary>
-              <span class="mini-cover cover-mare" aria-hidden="true">M</span>
-              <span class="book-meta"><span class="book-title">Mare Tranquillitatis</span><span class="book-byline">Julian Moss <span>·</span> Fiction</span></span>
-              <span class="book-status"><span class="reading-dot"></span>Reading</span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-mare" data-status="reading" data-title="Mare Tranquillitatis" data-author="Julian Moss" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Mare Tranquillitatis by Julian Moss: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-mare" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Mare<br>Tranquillitatis</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Julian Moss</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Julian Moss</span><span class="book-status"><span class="reading-dot"></span>Reading</span></span>
+            </button>
             <div class="book-note"><p class="book-description">A quiet novel about a seaside town and a letter that arrives twenty years too late.</p></div>
-          </details>
-          <details class="shelf-book" id="book-lumen" data-status="finished" data-year="2026">
-            <summary>
-              <span class="mini-cover cover-lumen" aria-hidden="true">L</span>
-              <span class="book-meta"><span class="book-title">Lumen et Umbra</span><span class="book-byline">Elias Vale <span>·</span> Essays <span>·</span> 2026</span></span>
-              <span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-lumen" data-status="finished" data-year="2026" data-title="Lumen et Umbra" data-author="Elias Vale" data-genre="Essays">
+            <button type="button" class="book-card" aria-label="Lumen et Umbra by Elias Vale: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-lumen" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Lumen<br>et Umbra</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Elias Vale</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Elias Vale</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+            </button>
             <div class="book-note">
               <p class="book-description">A collection of reflective essays about attention, memory, and the beauty of ordinary life.</p>
               <h3 class="section-label">favorite quotes</h3>
@@ -162,13 +174,17 @@
                 <li><blockquote><p>“Aenean lacinia bibendum nulla sed consectetur.”</p></blockquote></li>
               </ul>
             </div>
-          </details>
-          <details class="shelf-book" id="book-orbis" data-status="finished" data-year="2026">
-            <summary>
-              <span class="mini-cover cover-orbis" aria-hidden="true">O</span>
-              <span class="book-meta"><span class="book-title">Orbis Alius</span><span class="book-byline">Ada Laurent <span>·</span> Nonfiction <span>·</span> 2026</span></span>
-              <span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-orbis" data-status="finished" data-year="2026" data-title="Orbis Alius" data-author="Ada Laurent" data-genre="Nonfiction">
+            <button type="button" class="book-card" aria-label="Orbis Alius by Ada Laurent: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-orbis" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Orbis<br>Alius</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Ada Laurent</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Ada Laurent</span><span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span></span>
+            </button>
             <div class="book-note">
               <p class="book-description">An exploration of the hidden systems that shape how we see the world.</p>
               <h3 class="section-label">favorite quotes</h3>
@@ -176,13 +192,17 @@
                 <li><blockquote><p>“Integer posuere erat a ante venenatis dapibus posuere velit aliquet.”</p></blockquote></li>
               </ul>
             </div>
-          </details>
-          <details class="shelf-book" id="book-ars" data-status="finished" data-year="2026">
-            <summary>
-              <span class="mini-cover cover-ars" aria-hidden="true">A</span>
-              <span class="book-meta"><span class="book-title">Ars Vivendi</span><span class="book-byline">Lucia Venn <span>·</span> Philosophy <span>·</span> 2026</span></span>
-              <span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-ars" data-status="finished" data-year="2026" data-title="Ars Vivendi" data-author="Lucia Venn" data-genre="Philosophy">
+            <button type="button" class="book-card" aria-label="Ars Vivendi by Lucia Venn: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-ars" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Ars<br>Vivendi</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Lucia Venn</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Lucia Venn</span><span class="book-rating" aria-label="Rated 5 out of 5"><span aria-hidden="true">★</span> 5<span class="rating-total">/5</span></span></span>
+            </button>
             <div class="book-note">
               <p class="book-description">A philosophical guide to living deliberately and finding meaning in everyday experience.</p>
               <h3 class="section-label">favorite quotes</h3>
@@ -191,13 +211,17 @@
                 <li><blockquote><p>“Etiam porta sem malesuada magna mollis euismod.”</p></blockquote></li>
               </ul>
             </div>
-          </details>
-          <details class="shelf-book" id="book-noctis" data-status="finished" data-year="2025">
-            <summary>
-              <span class="mini-cover cover-noctis" aria-hidden="true">N</span>
-              <span class="book-meta"><span class="book-title">Noctis Silvarum</span><span class="book-byline">Theo Arden <span>·</span> Fiction <span>·</span> 2025</span></span>
-              <span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-noctis" data-status="finished" data-year="2025" data-title="Noctis Silvarum" data-author="Theo Arden" data-genre="Fiction">
+            <button type="button" class="book-card" aria-label="Noctis Silvarum by Theo Arden: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-noctis" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Noctis<br>Silvarum</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Theo Arden</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Theo Arden</span><span class="book-rating" aria-label="Rated 4.5 out of 5"><span aria-hidden="true">★</span> 4.5<span class="rating-total">/5</span></span></span>
+            </button>
             <div class="book-note">
               <p class="book-description">A lyrical novel about a traveler who discovers a village hidden inside an ancient forest.</p>
               <h3 class="section-label">favorite quotes</h3>
@@ -205,18 +229,36 @@
                 <li><blockquote><p>“Vestibulum id ligula porta felis euismod semper.”</p></blockquote></li>
               </ul>
             </div>
-          </details>
-          <details class="shelf-book" id="book-tempus" data-status="finished" data-year="2025">
-            <summary>
-              <span class="mini-cover cover-tempus" aria-hidden="true">T</span>
-              <span class="book-meta"><span class="book-title">Tempus Fugit</span><span class="book-byline">Milo West <span>·</span> Mystery <span>·</span> 2025</span></span>
-              <span class="book-rating" aria-label="Rated 4 out of 5"><span aria-hidden="true">★</span> 4<span class="rating-total">/5</span></span><span class="book-chevron" aria-hidden="true">+</span>
-            </summary>
+          </article>
+          <article class="shelf-book" id="book-tempus" data-status="finished" data-year="2025" data-title="Tempus Fugit" data-author="Milo West" data-genre="Mystery">
+            <button type="button" class="book-card" aria-label="Tempus Fugit by Milo West: description and quotes" aria-haspopup="dialog" aria-controls="book-reader" disabled>
+              <span class="book-cover cover-tempus" aria-hidden="true">
+                <span class="cover-imprint">MARGIN EDITIONS</span>
+                <span class="cover-name">Tempus<br>Fugit</span>
+                <span class="cover-art"></span>
+                <span class="cover-author">Milo West</span>
+              </span>
+              <span class="book-card-caption"><span class="book-author">Milo West</span><span class="book-rating" aria-label="Rated 4 out of 5"><span aria-hidden="true">★</span> 4<span class="rating-total">/5</span></span></span>
+            </button>
             <div class="book-note"><p class="book-description">A fast-paced mystery about a missing clockmaker and a city where time has begun to disappear.</p></div>
-          </details>
+          </article>
         </div>
+        <dialog class="book-reader" id="book-reader" aria-labelledby="reader-title">
+          <button type="button" class="reader-close" aria-label="Close book details" autofocus>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /></svg>
+          </button>
+          <div class="reader-heading">
+            <div class="reader-cover" id="reader-cover" aria-hidden="true"></div>
+            <div class="reader-identity">
+              <h3 id="reader-title">Book details</h3>
+              <p id="reader-byline"></p>
+              <p id="reader-rating"></p>
+            </div>
+          </div>
+          <div id="reader-content"></div>
+        </dialog>
         <p id="shelf-empty" class="sample-note" hidden>No books here yet.</p>
-        <noscript><p class="sample-note">Enable JavaScript to filter by reading status and year; you can still open every book and quote.</p></noscript>
+        <noscript><p class="sample-note">All book descriptions and quotes are shown here; enable JavaScript for cover previews and filters.</p></noscript>
       </section>
 
       <section id="contact" aria-labelledby="contact-title">
